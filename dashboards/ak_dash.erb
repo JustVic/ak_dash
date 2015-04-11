@@ -1,0 +1,41 @@
+<% content_for :title do %>My super sweet dashboard<% end %>
+
+
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.widget_base_dimensions = [120, 120]
+  Dashing.numColumns = 6
+});
+</script>
+
+<div class="gridster">
+  <ul>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="synergy" data-view="Clock" data-title="Clock"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="weatheroutlook" data-view="weatheroutlook"></div>
+    </li>
+
+    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="rts" data-view="RTS" data-title="RTSi" style="background-color:#94bf25;"><div>
+    </li>
+
+    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+    <div data-id="rubusd" data-view="Rubusd" data-title="Курс по ЦБ РФ"></div>
+    </li>
+   
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="btc" data-view="BTC" data-title="Bitcoin" style="margin:5px;padding:5px"></div>
+    </li>
+
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="2">
+      <div data-id="synergy" data-view="Clock" data-title="Clock"></div>
+    </li>
+
+  </ul>
+  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
+</div>
